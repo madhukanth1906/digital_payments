@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security Center - Behavioral Biometrics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Roboto+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                        "security-purple": "#6C63FF",
+                        "security-cyan": "#4ECDC4",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"],
+                        "mono": ["Roboto Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass {
+            background: rgba(34, 22, 16, 0.6);
+            border: 1px solid rgba(236, 91, 19, 0.1);
+        }
+        .gradient-shield {
+            background: linear-gradient(135deg, #6C63FF 0%, #4ECDC4 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative max-w-md mx-auto min-h-screen flex flex-col pb-24">
+<!-- Header Section -->
+<header class="p-6 pt-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h1 class="text-[28px] font-bold leading-tight tracking-tight">Security Center</h1>
+<p class="text-[15px] text-slate-500 dark:text-slate-400">Your Behavioral Shield</p>
+</div>
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">settings</span>
+</button>
+</div>
+<!-- Hero Status Card -->
+<div class="flex flex-col items-center justify-center py-4">
+<div class="relative mb-4 group">
+<div class="gradient-shield w-32 h-32 rounded-3xl flex items-center justify-center shadow-xl shadow-security-purple/20">
+<span class="material-symbols-outlined text-white text-6xl fill-1">shield_with_heart</span>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-green-500 w-8 h-8 rounded-full border-4 border-background-light dark:border-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm font-bold">check</span>
+</div>
+</div>
+<p class="text-2xl font-bold tracking-tight">Protected</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-widest">Status: Active</p>
+</div>
+</div>
+</header>
+<!-- Stats Row -->
+<div class="grid grid-cols-3 gap-3 px-4 mb-8">
+<div class="glass p-4 rounded-xl flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2 text-xl">verified_user</span>
+<p class="text-[10px] uppercase font-bold tracking-tighter text-slate-500 mb-1">Trust Score</p>
+<p class="font-mono text-lg font-bold">847</p>
+</div>
+<div class="glass p-4 rounded-xl flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-security-purple mb-2 text-xl">pattern</span>
+<p class="text-[10px] uppercase font-bold tracking-tighter text-slate-500 mb-1">Patterns</p>
+<p class="font-mono text-lg font-bold text-security-purple">47/47</p>
+</div>
+<div class="glass p-4 rounded-xl flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-red-500 mb-2 text-xl">gpp_maybe</span>
+<p class="text-[10px] uppercase font-bold tracking-tighter text-slate-500 mb-1">Blocked</p>
+<p class="font-mono text-lg font-bold">12</p>
+</div>
+</div>
+<!-- Category Tabs -->
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar mb-6 pb-2">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-security-purple px-6 shadow-lg shadow-security-purple/20">
+<p class="text-white text-sm font-semibold">All</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-6">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Physical</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-6">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Temporal</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-6">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Spatial</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-6">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Cognitive</p>
+</button>
+</div>
+<!-- Pattern List -->
+<div class="px-4 space-y-3 mb-10">
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4 px-1">Active Biometrics</h3>
+<!-- Physical Item -->
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-security-purple/10 flex items-center justify-center text-security-purple">
+<span class="material-symbols-outlined">touch_app</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-end mb-1">
+<p class="font-bold text-sm">Grip Pressure</p>
+<p class="font-mono text-xs font-bold text-security-cyan">94%</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-security-purple h-full rounded-full" style="width: 94%"></div>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="size-1.5 rounded-full bg-green-500"></span>
+<p class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">Active</p>
+</div>
+</div>
+</div>
+<!-- Temporal Item -->
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-end mb-1">
+<p class="font-bold text-sm">Transaction Time</p>
+<p class="font-mono text-xs font-bold text-primary">96%</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 96%"></div>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="size-1.5 rounded-full bg-green-500"></span>
+<p class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">Active</p>
+</div>
+</div>
+</div>
+<!-- Spatial Item -->
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-security-cyan/10 flex items-center justify-center text-security-cyan">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-end mb-1">
+<p class="font-bold text-sm">Frequent Locations</p>
+<p class="font-mono text-xs font-bold text-security-cyan">98%</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-security-cyan h-full rounded-full" style="width: 98%"></div>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="size-1.5 rounded-full bg-green-500"></span>
+<p class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">Active</p>
+</div>
+</div>
+</div>
+<!-- Cognitive Item -->
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-end mb-1">
+<p class="font-bold text-sm">Amount Rounding</p>
+<p class="font-mono text-xs font-bold text-slate-500">97%</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-slate-500 h-full rounded-full" style="width: 97%"></div>
+</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="size-1.5 rounded-full bg-yellow-500"></span>
+<p class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">Learning</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Score Visualization Card -->
+<div class="px-4 mb-8">
+<div class="glass p-8 rounded-3xl text-center flex flex-col items-center">
+<div class="relative size-48 flex items-center justify-center mb-6">
+<!-- Progress Circle SVG -->
+<svg class="absolute inset-0 size-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-slate-200 dark:text-slate-800 stroke-current" cx="50" cy="50" fill="transparent" r="42" stroke-width="8"></circle>
+<circle class="stroke-current" cx="50" cy="50" fill="transparent" r="42" stroke-dasharray="263.89" stroke-dashoffset="40.2" stroke-linecap="round" stroke-width="8" style="stroke: url(#scoreGradient)"></circle>
+<defs>
+<lineargradient id="scoreGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#6C63FF"></stop>
+<stop offset="100%" stop-color="#4ECDC4"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex flex-col items-center">
+<p class="font-mono text-4xl font-bold">847</p>
+<p class="text-slate-400 text-sm font-medium">out of 1000</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 w-full">
+<div class="text-left border-l-2 border-security-purple pl-3">
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-tighter">Physical</p>
+<p class="font-mono font-bold text-sm">215/250</p>
+</div>
+<div class="text-left border-l-2 border-primary pl-3">
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-tighter">Temporal</p>
+<p class="font-mono font-bold text-sm">198/250</p>
+</div>
+<div class="text-left border-l-2 border-security-cyan pl-3">
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-tighter">Spatial</p>
+<p class="font-mono font-bold text-sm">232/250</p>
+</div>
+<div class="text-left border-l-2 border-slate-400 pl-3">
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-tighter">Cognitive</p>
+<p class="font-mono font-bold text-sm">202/250</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-t border-slate-100 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">shield</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Center</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">fingerprint</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Patterns</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Activity</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

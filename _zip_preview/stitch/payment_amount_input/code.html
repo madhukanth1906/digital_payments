@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Input | BioPay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6C63FF",
+                        "accent": "#4ECDC4",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #6C63FF; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center">
+<div class="w-full max-w-md min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between p-4">
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold">Pay Merchant</h2>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<!-- Recipient Card -->
+<div class="px-4 py-2">
+<div class="glass p-4 rounded-xl flex items-center gap-4 shadow-sm">
+<div class="size-14 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border-2 border-primary/30">
+<img alt="Merchant avatar" class="w-full h-full object-cover" data-alt="Electronics store storefront with neon sign" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEihpY1rPafWJrKP6nJs2YSAO_2UkILXb-rc0_Xe5ykH812OS1eovu3yPkVY4iK5i9e4niFRtRcExZC6QezcUmnkxOBN4eyslyxTA9ouCcFGQdISzWnXtE5IO1kxqfGud4vkXDT7tfexFVbE7nn_sONvf9QJjNCclFxUIr9uL2VY72wKYu5TwHnhqd4cWya_WgoaV1NNNxsw4QLcWkxgorgJv7oljldwwyGQaBIL_2fN53MBEDKvdfPlgx-mP-S3pPhzdwP4DIel8"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-1">
+<h3 class="font-semibold text-[18px]">Sharma Electronics</h3>
+<span class="material-symbols-outlined text-emerald-500 text-lg" style="font-variation-settings: 'FILL' 1">check_circle</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">⭐ 847/1000 • Verified Merchant</p>
+</div>
+</div>
+</div>
+<!-- Amount Input Section -->
+<div class="flex-1 flex flex-col items-center justify-center py-8">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-4">Enter Amount</p>
+<div class="flex items-baseline gap-1 mb-2">
+<span class="font-mono text-2xl text-slate-400">₹</span>
+<div class="flex items-center border-r-2 border-transparent pr-1 cursor-blink">
+<span class="font-mono text-[56px] font-bold text-slate-800 dark:text-slate-100">0</span>
+</div>
+</div>
+<p class="text-[13px] text-slate-500 dark:text-slate-400">Available: ₹45,350</p>
+</div>
+<!-- Behavioral Monitor Banner -->
+<div class="px-4 mb-6">
+<div class="bg-slate-100 dark:bg-slate-800/50 rounded-lg p-3 flex items-center justify-between border border-slate-200 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="relative flex size-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full size-2 bg-primary"></span>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-300">Verifying your typing patterns...</span>
+</div>
+<div class="flex gap-1">
+<div class="size-1 bg-primary/40 rounded-full"></div>
+<div class="size-1 bg-primary/60 rounded-full"></div>
+<div class="size-1 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Number Pad Section -->
+<div class="bg-white dark:bg-slate-900 rounded-t-[2.5rem] pt-8 pb-6 px-8 shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<div class="grid grid-cols-3 gap-y-4 gap-x-6 justify-items-center mb-8">
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">1</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">2</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">3</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">4</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">5</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">6</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">7</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">8</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">9</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">.</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">0</button>
+<button class="w-full h-16 flex items-center justify-center text-2xl font-mono font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors text-slate-400">
+<span class="material-symbols-outlined">backspace</span>
+</button>
+</div>
+<div class="flex flex-col items-center gap-6">
+<button class="text-primary font-semibold text-sm hover:underline">Add Note</button>
+<!-- Disabled State CTA -->
+<button class="w-full h-14 rounded-xl flex items-center justify-center gap-2 text-white font-bold text-lg opacity-50 cursor-not-allowed bg-gradient-to-r from-primary to-accent shadow-lg shadow-primary/25">
+<span class="material-symbols-outlined">fingerprint</span>
+                    Pay ₹0
+                </button>
+</div>
+</div>
+</div>
+</body></html>

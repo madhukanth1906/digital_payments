@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Biometric Payment Onboarding</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              purple: '#6C63FF',
+              cyan: '#4ECDC4',
+              dark: '#1E1E2E',
+              gray: '#6B7280',
+              lightGray: '#9CA3AF',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-animations">
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.1); }
+    }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+    .animate-pulse-glow { animation: pulse-glow 6s ease-in-out infinite; }
+    
+    /* Glassmorphism Effect */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Gradient Button Shadow */
+    .btn-shadow {
+      box-shadow: 0 10px 25px -5px rgba(108, 99, 255, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 h-screen w-full overflow-hidden font-sans antialiased text-brand-dark">
+<!-- BEGIN: MainContainer -->
+<main class="relative h-full w-full flex flex-col overflow-hidden bg-[#F8FAFC]">
+<!-- BEGIN: TopHeader -->
+<header class="absolute top-0 left-0 w-full p-6 z-30 flex justify-end">
+<button class="text-brand-lightGray font-medium text-[14px] hover:text-brand-dark transition-colors">
+        Skip
+      </button>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: IllustrationSection -->
+<section class="relative h-1/2 w-full flex items-center justify-center overflow-hidden" data-purpose="visual-illustration">
+<!-- Glow Background -->
+<div class="absolute w-64 h-64 bg-brand-purple/20 blur-[80px] rounded-full animate-pulse-glow"></div>
+<!-- Placeholder for 3D Smartphone Illustration -->
+<div class="relative z-10 animate-float flex flex-col items-center">
+<!-- SVG representing the 3D Phone with Gradient -->
+<svg fill="none" height="320" viewbox="0 0 180 320" width="180" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="phoneGrad" x1="0" x2="180" y1="0" y2="320">
+<stop offset="0%" stop-color="#6C63FF"></stop>
+<stop offset="100%" stop-color="#4ECDC4"></stop>
+</lineargradient>
+<filter height="140%" id="glow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="5"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Phone Body -->
+<rect fill="white" fill-opacity="0.9" height="300" rx="24" stroke="url(#phoneGrad)" stroke-width="4" width="160" x="10" y="10"></rect>
+<rect fill="url(#phoneGrad)" fill-opacity="0.1" height="280" rx="16" width="140" x="20" y="20"></rect>
+<!-- Inner details representing data -->
+<circle cx="90" cy="160" fill="url(#phoneGrad)" fill-opacity="0.8" r="40"></circle>
+<path d="M60 160C60 143.431 73.4315 130 90 130C106.569 130 120 143.431 120 160" stroke="white" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<!-- Particle Effects Elements -->
+<div class="absolute -top-4 -left-8 w-3 h-3 bg-brand-cyan rounded-full opacity-60 animate-pulse"></div>
+<div class="absolute top-1/2 -right-10 w-2 h-2 bg-brand-purple rounded-full opacity-60 animate-bounce"></div>
+<div class="absolute -bottom-6 left-1/4 w-4 h-4 bg-brand-cyan/40 rounded-full blur-sm"></div>
+</div>
+</section>
+<!-- END: IllustrationSection -->
+<!-- BEGIN: ContentCardSection -->
+<section class="relative h-1/2 w-full flex flex-col justify-between" data-purpose="content-card">
+<div class="glass-card flex-1 mx-4 mb-8 rounded-[40px] p-8 flex flex-col items-center justify-between text-center shadow-sm">
+<!-- Text Content -->
+<div class="space-y-4 pt-4">
+<h1 class="text-[28px] font-bold leading-tight px-2">
+            Your Behavior is Your Password
+          </h1>
+<p class="text-brand-gray text-[16px] leading-relaxed">
+            We learn 47 unique patterns from how you use your phone - no passwords to remember
+          </p>
+</div>
+<!-- Pagination & CTA -->
+<div class="w-full space-y-8 pb-4">
+<!-- Progress Indicator -->
+<div class="flex justify-center space-x-2" data-purpose="pagination-dots">
+<span class="w-6 h-2 bg-brand-purple rounded-full transition-all duration-300"></span>
+<span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+<span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+</div>
+<!-- CTA Button -->
+<button class="w-full h-[56px] bg-gradient-to-r from-[#6C63FF] to-[#4ECDC4] text-white font-bold text-lg rounded-2xl btn-shadow active:scale-[0.98] transition-transform duration-150" data-purpose="get-started-button">
+            Get Started
+          </button>
+</div>
+</div>
+</section>
+<!-- END: ContentCardSection -->
+</main>
+<!-- END: MainContainer -->
+</body></html>

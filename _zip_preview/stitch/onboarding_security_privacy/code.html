@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security Setup - Final Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6C63FF",
+                        "secondary": "#4ECDC4",
+                        "accent-green": "#00D9A3",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6C63FF 0%, #4ECDC4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-gradient {
+            background: linear-gradient(135deg, #6C63FF 0%, #4ECDC4 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center">
+<div class="relative flex h-full min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<!-- Header -->
+<div class="flex items-center p-4 justify-between">
+<button class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight flex-1 text-center pr-8">Security Setup</h2>
+</div>
+<!-- Top Hero Section: Smartphone + Shield -->
+<div class="relative flex flex-col items-center justify-center pt-8 pb-12 px-6">
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Smartphone Mockup Background -->
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 rounded-[2.5rem] border-4 border-slate-300 dark:border-slate-700 opacity-50 transform rotate-[-5deg] scale-90"></div>
+<!-- Main Smartphone -->
+<div class="relative w-48 h-80 bg-slate-100 dark:bg-slate-900 rounded-[2rem] border-8 border-slate-900 dark:border-slate-800 shadow-2xl flex flex-col items-center justify-center overflow-hidden">
+<div class="absolute top-0 w-20 h-6 bg-slate-900 rounded-b-xl"></div>
+<div class="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary/20">fingerprint</span>
+</div>
+</div>
+<!-- Floating 3D Shield -->
+<div class="absolute -top-4 -right-2 w-32 h-32 flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full blur-2xl opacity-30"></div>
+<div class="relative z-10 w-24 h-24 cta-gradient rounded-2xl shadow-xl flex items-center justify-center transform rotate-[10deg]">
+<span class="material-symbols-outlined text-5xl text-white">verified_user</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Horizontal Scrolling Stat Cards -->
+<div class="w-full overflow-x-auto pb-6 px-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<div class="flex flex-nowrap gap-4">
+<!-- Card 1 -->
+<div class="glass-card flex flex-col items-center justify-center p-4 rounded-xl min-w-[160px] h-[120px] text-center shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-xl">track_changes</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">99.4%</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase tracking-wider">Fraud Detection</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-card flex flex-col items-center justify-center p-4 rounded-xl min-w-[160px] h-[120px] text-center shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-secondary text-xl">grid_view</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">47 Patterns</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase tracking-wider">Behavior Biometrics</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-card flex flex-col items-center justify-center p-4 rounded-xl min-w-[160px] h-[120px] text-center shadow-sm">
+<div class="w-10 h-10 rounded-full bg-accent-green/10 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-accent-green text-xl">notifications_off</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold">0.02%</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase tracking-wider">False Alarms</p>
+</div>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex-1 flex flex-col px-8 text-center pb-12">
+<!-- Privacy Badge -->
+<div class="flex justify-center mb-4">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-accent-green rounded-full text-white text-xs font-semibold">
+<span class="material-symbols-outlined text-sm animate-spin-slow">lock</span>
+                    End-to-End Encrypted
+                </div>
+</div>
+<h1 class="text-[#1E1E2E] dark:text-slate-100 text-2xl font-bold leading-tight mb-2">
+                Bank-Level Security, <br/>Zero Effort
+            </h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8">
+                Your data stays on your device. <br/>We never see your patterns.
+            </p>
+<!-- Progress Dots -->
+<div class="flex justify-center gap-2 mb-10">
+<div class="w-2 h-2 rounded-full cta-gradient"></div>
+<div class="w-2 h-2 rounded-full cta-gradient"></div>
+<div class="w-6 h-2 rounded-full cta-gradient"></div>
+</div>
+<!-- CTA Buttons -->
+<div class="space-y-4">
+<button class="w-full py-4 cta-gradient text-white font-bold rounded-xl shadow-lg shadow-primary/30 active:scale-[0.98] transition-transform">
+                    Create Account
+                </button>
+<button class="w-full py-2 text-primary font-semibold text-sm hover:underline">
+                    Sign In
+                </button>
+</div>
+</div>
+</div>
+<!-- Hidden CSS for subtle rotations -->
+<style>
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 8s linear infinite;
+        }
+    </style>
+</body></html>

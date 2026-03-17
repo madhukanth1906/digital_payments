@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Biometric Payments Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Public Sans", "sans-serif"],
+                        "mono": ["SF Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass {
+            background: rgba(34, 22, 16, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .trust-ring {
+            transform: rotate(-90deg);
+            transition: stroke-dashoffset 0.5s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- iOS Style Status Bar -->
+<div class="flex justify-between items-center px-6 pt-3 pb-1 text-sm font-semibold">
+<span>9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-sm">wifi</span>
+<span class="material-symbols-outlined text-sm">battery_full</span>
+</div>
+</div>
+<!-- Header (120px) -->
+<header class="h-[120px] flex items-center justify-between px-6">
+<div class="relative">
+<div class="w-12 h-12 rounded-full border-2 border-white dark:border-slate-800 overflow-hidden shadow-sm">
+<img alt="Rahul's Profile" class="w-full h-full object-cover" data-alt="Professional male portrait for profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALKo0ixe8d6xI6w7n0cLXsKfzQchAwn2rrBhQY8uyC8Xe2SUlrDwL_frLLi9e8lRDW8WRj49qLiPfrzPtdNAdRR7mvtcVIB2AiOebOMZzlaH0BFtaVpDO0CAtdtjDpC3TeR2SnccmonJB7EtCuLFfQ8fjBGuVCYbfbu1FaSO0IKsTmQBjZCDSW2-kftzyW_2iwg3gk_n3ptabdYhYmdkH1nn0bmQ2OyNuplhnIUem6YGH0ssFhHxhpbC7ZZ20PgvwKwaP3Nus_3Cc"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<h1 class="text-[18px] font-medium text-slate-800 dark:text-slate-100">Good Morning, Rahul</h1>
+<button class="relative p-2 bg-white dark:bg-slate-800 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">notifications</span>
+<span class="absolute top-2 right-2.5 w-2 h-2 bg-primary rounded-full border border-white"></span>
+</button>
+</header>
+<main class="px-6 space-y-4">
+<!-- Security Status Card (Glassmorphic) -->
+<div class="glass rounded-xl p-5 shadow-[0_4px_16px_rgba(0,0,0,0.08)] flex items-center gap-6">
+<div class="relative w-20 h-20 flex items-center justify-center shrink-0">
+<svg class="w-full h-full trust-ring">
+<circle class="text-slate-200 dark:text-slate-700" cx="40" cy="40" fill="transparent" r="34" stroke="currentColor" stroke-width="6"></circle>
+<circle cx="40" cy="40" fill="transparent" r="34" stroke="url(#trustGradient)" stroke-dasharray="213.6" stroke-dashoffset="32" stroke-linecap="round" stroke-width="6"></circle>
+<defs>
+<lineargradient id="trustGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#8b5cf6"></stop>
+<stop offset="100%" style="stop-color:#06b6d4"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-xs font-bold leading-none">847</span>
+<span class="text-[8px] opacity-60">SCORE</span>
+</div>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+<h2 class="font-bold text-lg">All Secure</h2>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">47/47 patterns active</p>
+<a class="inline-block pt-2 text-xs font-semibold text-primary" href="#">View Details &gt;</a>
+</div>
+</div>
+<!-- Balance Card -->
+<div class="relative bg-white dark:bg-slate-800 rounded-xl p-6 shadow-[0_4px_16px_rgba(0,0,0,0.08)] overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-purple-500/20 to-transparent -mr-8 -mt-8 rounded-full"></div>
+<div class="flex justify-between items-center mb-1">
+<span class="text-[14px] font-medium text-slate-500 dark:text-slate-400">Available Balance</span>
+<button class="material-symbols-outlined text-slate-400 text-lg">visibility</button>
+</div>
+<div class="font-mono font-bold text-[32px] text-slate-900 dark:text-slate-100 tracking-tight">
+                ₹45,350.00
+            </div>
+<div class="mt-4 flex gap-2">
+<span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 text-[10px] font-bold rounded uppercase tracking-wider">Primary Account</span>
+</div>
+</div>
+<!-- Quick Actions (2x2 Grid) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="glass flex flex-col items-center justify-center h-[100px] rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] cursor-pointer hover:bg-white/90 transition-colors">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary">send</span>
+</div>
+<span class="text-sm font-semibold">Pay/Send</span>
+</div>
+<div class="glass flex flex-col items-center justify-center h-[100px] rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] cursor-pointer hover:bg-white/90 transition-colors">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary">request_quote</span>
+</div>
+<span class="text-sm font-semibold">Request</span>
+</div>
+<div class="glass flex flex-col items-center justify-center h-[100px] rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] cursor-pointer hover:bg-white/90 transition-colors">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary">qr_code_scanner</span>
+</div>
+<span class="text-sm font-semibold">Scan QR</span>
+</div>
+<div class="glass flex flex-col items-center justify-center h-[100px] rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.08)] cursor-pointer hover:bg-white/90 transition-colors">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary">add_circle</span>
+</div>
+<span class="text-sm font-semibold">Add Money</span>
+</div>
+</div>
+<!-- Recent Transactions -->
+<div class="pt-2">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold">Recent</h3>
+<a class="text-sm font-semibold text-primary" href="#">See All</a>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+<!-- Transaction Item 1 -->
+<div class="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-slate-500">shopping_bag</span>
+</div>
+<div>
+<p class="font-bold text-sm">Starbucks Coffee</p>
+<p class="text-[11px] text-slate-500">Today, 09:24 AM</p>
+</div>
+</div>
+<span class="font-bold text-sm text-slate-900 dark:text-slate-100">-₹450.00</span>
+</div>
+<!-- Transaction Item 2 -->
+<div class="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">person</span>
+</div>
+<div>
+<p class="font-bold text-sm">Amit Sharma</p>
+<p class="text-[11px] text-slate-500">Yesterday, 08:15 PM</p>
+</div>
+</div>
+<span class="font-bold text-sm text-green-600">+₹2,500.00</span>
+</div>
+<!-- Transaction Item 3 -->
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">directions_car</span>
+</div>
+<div>
+<p class="font-bold text-sm">Uber India</p>
+<p class="text-[11px] text-slate-500">Yesterday, 06:40 PM</p>
+</div>
+</div>
+<span class="font-bold text-sm text-slate-900 dark:text-slate-100">-₹320.00</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-6 pb-6 pt-2 z-50">
+<div class="flex items-end justify-between max-w-md mx-auto relative">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium">History</span>
+</a>
+<!-- Center Scan Button -->
+<div class="absolute left-1/2 -translate-x-1/2 -top-10">
+<button class="w-16 h-16 rounded-full bg-gradient-to-tr from-primary to-orange-400 text-white shadow-lg flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-3xl">qr_code_scanner</span>
+</button>
+</div>
+<div class="w-16"></div> <!-- Spacer for center button -->
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[10px] font-medium">Community</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

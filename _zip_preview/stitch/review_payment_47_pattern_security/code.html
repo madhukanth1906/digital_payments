@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "Inter", "sans-serif"],
+                        "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-card {
+            box-shadow: 8px 8px 16px rgba(0,0,0,0.05), -8px -8px 16px rgba(255,255,255,0.8);
+        }
+        .gradient-banner {
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+        }
+        .gradient-track {
+            background: linear-gradient(90deg, #9333ea 0%, #06b6d4 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-md mx-auto min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex items-center p-4 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<button class="text-slate-900 dark:text-slate-100 p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold pr-10">Review Payment</h1>
+</header>
+<main class="flex-1 px-4 pb-32">
+<!-- Verification Banner -->
+<div class="gradient-banner rounded-2xl p-5 mb-6 border border-primary/10 flex items-center gap-4 relative overflow-hidden">
+<div class="relative flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/20 rounded-full animate-ping opacity-25"></div>
+<div class="bg-white dark:bg-slate-800 rounded-full p-2 shadow-sm z-10">
+<span class="material-symbols-outlined text-cyan-600 dark:text-cyan-400 text-3xl" style="font-variation-settings: 'FILL' 1">verified_user</span>
+</div>
+</div>
+<div class="flex flex-col">
+<p class="font-bold text-slate-900 dark:text-slate-100">Behavioral Verification Complete</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">All 47 patterns matched</p>
+</div>
+</div>
+<!-- Payment Details Card (Neomorphic) -->
+<div class="neo-card bg-white dark:bg-slate-900 rounded-3xl p-6 mb-6">
+<div class="flex flex-col items-center text-center gap-2">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center mb-2 overflow-hidden border-2 border-primary/5">
+<img class="w-full h-full object-cover" data-alt="Merchant logo for Sharma Electronics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0lzXDGrZmGnrbHssblmgcD3Q32QU_Vwwzd-jumkFSjFKs14aoQJsETBfjsCCrJfQxyG-y8SpBVezpvg6UP7InsrqVFhThQEqUnBmuGW5niSXwGxlDxBCa_T2UFfroc_xAAteTxH-w9Ia-sp81_9DSm1ReRcdOfIF4FO1trR7lBf-XiSVqagQUY-70pG93qL3veJRUH17fx8ZXLrj0pbsjNFBeMv7ixFjKSgn7lVa02nc_aOhD2jVplVrjs0PB_pRyJz-eIdh_8C4"/>
+</div>
+<h2 class="text-lg font-semibold text-slate-700 dark:text-slate-300">Sharma Electronics</h2>
+<div class="font-mono text-4xl font-bold text-slate-900 dark:text-white my-2">₹10,000</div>
+<p class="italic text-slate-500 dark:text-slate-400 text-sm">For headphones</p>
+</div>
+<div class="h-px bg-slate-100 dark:bg-slate-800 my-6"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-slate-100 dark:bg-slate-800 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<p class="text-xs uppercase tracking-wider font-bold text-slate-400">Payment Method</p>
+<p class="font-medium">UPI • ••••4521</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+<!-- Security Check Panel -->
+<div class="bg-slate-100/50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500" style="font-variation-settings: 'FILL' 1">check_circle</span>
+<h3 class="font-bold text-slate-700 dark:text-slate-300">Security Checks Passed</h3>
+</div>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-4 pb-4 space-y-3">
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span>
+<span>Grip pattern verified</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span>
+<span>Typing rhythm matched</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span>
+<span>Location validated</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span>
+<span>Timing consistent</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span>
+<span>Amount pattern normal</span>
+</div>
+<div class="pt-2">
+<a class="text-primary text-sm font-semibold hover:underline" href="#">... 42 more checks</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Confirm Section (Sticky Bottom) -->
+<footer class="fixed bottom-0 left-0 right-0 p-6 bg-background-light dark:bg-background-dark max-w-md mx-auto">
+<div class="relative h-16 w-full gradient-track rounded-full p-1 shadow-lg flex items-center">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-white font-bold tracking-wide">Swipe to Pay ₹10,000</span>
+</div>
+<div class="h-14 w-14 bg-white rounded-full flex items-center justify-center shadow-md cursor-grab active:cursor-grabbing z-20">
+<span class="material-symbols-outlined text-slate-900 text-2xl" style="font-variation-settings: 'FILL' 0">fingerprint</span>
+</div>
+</div>
+<p class="text-center text-xs text-slate-400 mt-4">Protected by Behavioral AI Biometrics</p>
+</footer>
+</div>
+</body></html>

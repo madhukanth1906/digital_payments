@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security Alert - Behavioral Biometrics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"],
+                        "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="max-w-md mx-auto min-h-screen flex flex-col pb-10">
+<!-- TopAppBar & Alert Banner -->
+<header class="relative overflow-hidden bg-gradient-to-b from-red-500 to-red-600 dark:from-red-900 dark:to-background-dark pt-4 pb-8 px-4 rounded-b-[2.5rem] shadow-xl">
+<div class="flex items-center justify-between mb-6">
+<div class="text-white bg-white/20 p-2 rounded-full backdrop-blur-md cursor-pointer">
+<span class="material-symbols-outlined block">arrow_back</span>
+</div>
+<h2 class="text-white text-lg font-bold">Security Alert</h2>
+<div class="w-10"></div>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-4">
+<div class="absolute inset-0 bg-white/30 rounded-full animate-ping"></div>
+<div class="relative bg-white text-red-600 p-4 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-4xl font-bold">warning</span>
+</div>
+</div>
+<h1 class="text-white text-2xl font-bold tracking-tight mb-1">Suspicious Activity Detected</h1>
+<p class="text-red-50/90 text-sm font-medium">Payment blocked for your safety</p>
+</div>
+</header>
+<main class="px-4 -mt-6 space-y-4">
+<!-- Transaction Card -->
+<section class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-xl border border-white/20">
+<div class="flex items-center justify-between mb-4">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Attempted Transaction</span>
+<span class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-[10px] font-bold px-2 py-1 rounded-full border border-red-200 dark:border-red-800">BLOCKED</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">₹9,999</p>
+<p class="text-slate-600 dark:text-slate-400 font-medium">to Lottery Processing</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-sm text-slate-500">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Today, 11:47 PM</span>
+</div>
+<div class="font-mono text-[10px] opacity-60">ID: TXN-9482-B</div>
+</div>
+</section>
+<!-- Risk Analysis -->
+<section class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-lg">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    Why we blocked this
+                </h3>
+<div class="flex items-center gap-8">
+<div class="relative size-28 flex items-center justify-center">
+<!-- SVG Risk Gauge -->
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<circle class="stroke-slate-100 dark:stroke-slate-700" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-red-500" cx="18" cy="18" fill="none" r="16" stroke-dasharray="94, 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-black text-red-600 dark:text-red-400">94</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Threat Score</span>
+</div>
+</div>
+<div class="flex-1 space-y-2">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-red-500"></div>
+<span class="text-sm font-bold text-red-600 dark:text-red-400 uppercase">Critical Risk Zone</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Our behavioral AI detected patterns consistent with "Coerced Social Engineering" scams.</p>
+</div>
+</div>
+<!-- Mismatched Patterns List -->
+<div class="mt-6 space-y-3 max-h-64 overflow-y-auto pr-2 custom-scrollbar">
+<div class="flex gap-3 items-start p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-red-500">cancel</span>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-sm">Unusual Amount</span>
+<span class="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">HIGH RISK</span>
+</div>
+<p class="text-xs text-slate-500">Significantly higher than your average daily spend.</p>
+</div>
+</div>
+<div class="flex gap-3 items-start p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-red-500">cancel</span>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-sm">Suspicious Recipient</span>
+<span class="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">HIGH RISK</span>
+</div>
+<p class="text-xs text-slate-500">Recipient wallet flagged in 12 previous fraud reports.</p>
+</div>
+</div>
+<div class="flex gap-3 items-start p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-red-500">cancel</span>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-sm">Voice Stress Detected</span>
+<span class="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">HIGH RISK</span>
+</div>
+<p class="text-xs text-slate-500">AI detected micro-tremors in voice command indicating coercion.</p>
+</div>
+</div>
+<div class="flex gap-3 items-start p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-red-500">cancel</span>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-sm">Location Mismatch</span>
+<span class="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">HIGH RISK</span>
+</div>
+<p class="text-xs text-slate-500">Transaction attempted from a non-regular GPS coordinate.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline -->
+<section class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-lg">
+<h3 class="text-lg font-bold mb-6">What happened</h3>
+<div class="relative pl-6 border-l-2 border-slate-100 dark:border-slate-700 ml-2 space-y-8">
+<div class="relative">
+<div class="absolute -left-[33px] size-4 rounded-full bg-slate-300 border-4 border-white dark:border-slate-800"></div>
+<p class="text-xs font-bold text-slate-400">11:45 PM</p>
+<p class="text-sm font-semibold">Incoming call from unknown number</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] size-4 rounded-full bg-slate-300 border-4 border-white dark:border-slate-800"></div>
+<p class="text-xs font-bold text-slate-400">11:46 PM</p>
+<p class="text-sm font-semibold">Payment app opened via voice link</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] size-4 rounded-full bg-red-500 border-4 border-white dark:border-slate-800 ring-4 ring-red-500/20"></div>
+<p class="text-xs font-bold text-red-500">11:47 PM</p>
+<p class="text-sm font-bold text-red-600 dark:text-red-400">AI blocked transaction - High threat detected</p>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<section class="space-y-3 pt-4">
+<button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-green-600/20 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">verified</span>
+                    This Was Fraud - Thank You
+                </button>
+<button class="w-full bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold py-4 rounded-xl transition-all">
+                    This Was Legitimate
+                </button>
+<button class="w-full text-red-600 dark:text-red-400 font-bold py-2 flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-base">report</span>
+                    Report Scammer
+                </button>
+</section>
+<!-- Safety Tip Footer -->
+<footer class="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-4 flex gap-4">
+<div class="text-amber-500">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+<div>
+<h4 class="font-bold text-amber-900 dark:text-amber-100 text-sm mb-1">Safety Tip</h4>
+<p class="text-xs text-amber-800 dark:text-amber-200/80 leading-normal">Government agencies, banks, or police will never ask you to transfer money to "secure" it or "lottery taxes" over a call.</p>
+</div>
+</footer>
+</main>
+</div>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(236, 91, 19, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</body></html>

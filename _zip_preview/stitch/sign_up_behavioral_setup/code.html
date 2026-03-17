@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Account - Behavioral Biometrics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6C63FF",
+                        "secondary": "#4ECDC4",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(34, 22, 16, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .floating-label-group {
+            position: relative;
+        }
+        .floating-label-group input:focus ~ label,
+        .floating-label-group input:not(:placeholder-shown) ~ label {
+            transform: translateY(-1.5rem) scale(0.85);
+            color: #6C63FF;
+            background-color: transparent;
+            padding: 0 4px;
+        }
+        .floating-label-group label {
+            position: absolute;
+            top: 1rem;
+            left: 3rem;
+            transition: all 0.2s ease-out;
+            pointer-events: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center px-6 py-8">
+<button class="mr-4 text-slate-900 dark:text-slate-100 flex items-center justify-center p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-[24px] font-bold tracking-tight">Create Account</h1>
+</header>
+<!-- Main Form Content -->
+<main class="flex-1 px-6 space-y-6 pb-40">
+<form class="space-y-5">
+<!-- Phone Number Field -->
+<div class="space-y-1">
+<div class="relative flex items-center h-[56px] border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined ml-4 text-slate-400">call</span>
+<div class="flex items-center px-3 border-r border-slate-200 dark:border-slate-700 h-full">
+<span class="text-sm font-semibold">+91</span>
+<span class="material-symbols-outlined text-sm ml-1">expand_more</span>
+</div>
+<input class="flex-1 h-full bg-transparent border-none focus:ring-0 px-4 text-base peer" id="phone" placeholder=" " type="tel"/>
+<label class="absolute left-12 top-4 text-slate-400 transition-all peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs" for="phone">Phone Number</label>
+</div>
+</div>
+<!-- Full Name Field -->
+<div class="relative flex items-center h-[56px] border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined ml-4 text-slate-400">person</span>
+<input class="flex-1 h-full bg-transparent border-none focus:ring-0 px-4 text-base peer" id="fullname" placeholder=" " type="text"/>
+<label class="absolute left-12 top-4 text-slate-400 transition-all peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs" for="fullname">Full Name</label>
+</div>
+<!-- Email Field -->
+<div class="relative flex items-center h-[56px] border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined ml-4 text-slate-400">mail</span>
+<input class="flex-1 h-full bg-transparent border-none focus:ring-0 px-4 text-base peer" id="email" placeholder=" " type="email"/>
+<label class="absolute left-12 top-4 text-slate-400 transition-all peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-7 peer-[:not(:placeholder-shown)]:text-xs" for="email">Email (optional)</label>
+</div>
+</form>
+<!-- Behavioral Setup Card -->
+<div class="glass-card rounded-2xl p-6 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-2 left-4 w-1 h-1 bg-primary rounded-full"></div>
+<div class="absolute top-10 right-10 w-2 h-2 bg-secondary rounded-full"></div>
+<div class="absolute bottom-4 left-1/2 w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<div class="flex items-start gap-3 mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">fingerprint</span>
+</div>
+<p class="text-sm font-medium leading-tight text-slate-700 dark:text-slate-200">
+                    While you type, we're learning your unique patterns
+                </p>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+<span>Learning Progress</span>
+<span class="text-primary">3/47 patterns detected</span>
+</div>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full w-[15%] bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- CTA Section -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 space-y-6">
+<div class="flex items-start gap-3">
+<div class="flex items-center h-5">
+<input class="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary" id="terms" type="checkbox"/>
+</div>
+<label class="text-[13px] text-slate-600 dark:text-slate-400 leading-tight" for="terms">
+                I agree to <a class="text-primary font-semibold" href="#">Terms</a> &amp; <a class="text-primary font-semibold" href="#">Privacy Policy</a>
+</label>
+</div>
+<button class="w-full h-[56px] rounded-xl bg-gradient-to-r from-primary to-[#8E87FF] text-white font-bold text-lg opacity-40 shadow-lg shadow-primary/20 cursor-not-allowed" disabled="">
+            Continue
+        </button>
+<div class="space-y-4">
+<div class="relative flex items-center">
+<div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+<span class="flex-shrink mx-4 text-xs text-slate-400 font-medium">Or continue with</span>
+<div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 h-12 rounded-xl bg-white border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors">
+<img alt="Google" class="w-5 h-5" data-alt="Google logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg_EuP3NSCT7iv26ZvCYGfio8WQ99hg-1lO0Q04LOJ65QqRPcJFDGANv4zkTNkahf1rwMsfcTDROYbxFm3A_rWYPRjDLgg4jjCFzCvk9FRBACAOngZHRJbrO0MENkH9tqmXztVLgtznvUHt2c3_srMZxR36Ug76E0-HWKLYA0KNONAr_dqPM87WrFsxWj81dh2F-a1yUm0FEObPd6ybb5nG6YSFc4zJ-GSRvwEnFyf3BwSJhEukLlnVpGNJr9adjNO-UXKUXnSHXk"/>
+<span class="text-sm font-semibold text-slate-700">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 rounded-xl bg-white border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-slate-900">ios</span>
+<span class="text-sm font-semibold text-slate-700">Apple</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

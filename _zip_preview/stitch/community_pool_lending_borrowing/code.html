@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Pool - Lending Interface</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"],
+                        "mono": ["Roboto Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass {
+            background: rgba(34, 22, 16, 0.7);
+            border: 1px solid rgba(236, 91, 19, 0.1);
+        }
+        .gradient-btn {
+            background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 glass px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary cursor-pointer">arrow_back</span>
+<h1 class="text-xl font-bold tracking-tight">Community Pool</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">info</span>
+</button>
+</header>
+<main class="max-w-md mx-auto p-4 space-y-6">
+<!-- Hero Stats -->
+<div class="flex flex-col items-center text-center py-6 gap-2">
+<div class="relative">
+<div class="w-32 h-32 rounded-full border-4 border-primary/20 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 animate-pulse"></div>
+<span class="material-symbols-outlined text-5xl text-primary">account_balance_wallet</span>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full border-2 border-background-light dark:border-background-dark">
+                    TRUSTED
+                </div>
+</div>
+<div class="mt-4">
+<h2 class="text-3xl font-bold">₹5,000 <span class="text-sm font-normal text-slate-500 dark:text-slate-400">pooled</span></h2>
+<p class="text-green-600 dark:text-green-400 font-medium flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                    +₹147 this month earned
+                </p>
+</div>
+</div>
+<!-- Loan Offer Card -->
+<div class="relative overflow-hidden rounded-2xl p-5 shadow-xl glass border-primary/20">
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-purple-200 dark:border-purple-800">
+                    You're Pre-Approved
+                </span>
+</div>
+<div class="space-y-4">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Available Credit</p>
+<h3 class="text-2xl font-bold">₹500 - ₹50,000</h3>
+</div>
+<div class="grid grid-cols-2 gap-3 text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-purple-500 text-lg">percent</span>
+<span class="text-slate-700 dark:text-slate-300">2% for 3 days</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-500 text-lg">verified</span>
+<span class="text-slate-700 dark:text-slate-300">847 trust score</span>
+</div>
+</div>
+<p class="text-xs text-slate-400 italic">Instant approval • Auto-repay from salary</p>
+<button class="w-full py-3 rounded-xl text-white font-bold gradient-btn shadow-lg shadow-purple-500/20 active:scale-95 transition-transform">
+                    Request Loan
+                </button>
+</div>
+</div>
+<!-- Active Borrows -->
+<section class="space-y-4">
+<h3 class="text-lg font-bold flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-primary">pending_actions</span>
+                Active Borrows
+            </h3>
+<div class="bg-white dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-bold">₹5,000 borrowed</h4>
+<p class="text-sm text-slate-500 flex items-center gap-1 mt-1">
+                            From 23 community members
+                        </p>
+</div>
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-800" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCptkxS92PRL3Ytc2PYB1ndEpYAwuX1iWZabyqjUr0qNAYakJBd7ZYNGOeDrmN0PQ6whkhiTOZoPVisbyXHdj6R8XVt9aDzMaSJq-KL0GZZW1GWCy9-NIHIUQNz9mIh_giZJf_y0H-NKbIT5xTQzPptIhtIYPigbDfOI0QjokWMRqfgiXSaHXy2hi4frguySoZwPQTGtfeb8tPm6gbDjnefQcRlUovklBjLcsmyL_cjDrllrYDmWJVgZXRpPBofHDR44PB_Qj8OvrA"/>
+<img class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-800" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa6JS6koU8IyKfy2n4e42Up2YGEzlmWcr4LE8v5VcZuDgCWPnPgaOqot1sp_ZVVc9s7fVJ-EJgRh1s37nzfwM14zgzSHhyiWLSs3Gw1DB7ofJeFTfDATX6_hA8o0um-onRH6pvvF8bydxv_as_9qo2USoQmAOUWPsbVlCRJPwfGXyFJNHm12xBT15fMnSq4ykLF-ltXmrVMCF3BjR7YO2nRzHqYk895-jd_Ut307BPUES-Y7iIB9kMq6GDlicfzA_8BWFiq7aTwmw"/>
+<div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 border-2 border-white dark:border-slate-800 flex items-center justify-center text-[10px] font-bold">+18</div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-slate-600 dark:text-slate-400">₹2,000 repaid</span>
+<span class="text-slate-600 dark:text-slate-400">Goal: ₹5,100</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 40%"></div>
+</div>
+<div class="flex justify-between text-[10px] text-slate-400 uppercase tracking-tighter">
+<span>Includes ₹100 interest</span>
+<span class="text-primary font-bold">Repay by Jan 15</span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-xl border-2 border-primary/20 text-primary font-bold text-sm hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                    Repay Now
+                </button>
+</div>
+</section>
+<!-- Community Stats -->
+<section class="space-y-4">
+<h3 class="text-lg font-bold px-1">Community Stats</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-slate-900/40 p-4 rounded-2xl border border-slate-100 dark:border-slate-800">
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Total Pool</p>
+<p class="text-xl font-mono font-bold text-primary">₹12.4L</p>
+</div>
+<div class="bg-white dark:bg-slate-900/40 p-4 rounded-2xl border border-slate-100 dark:border-slate-800">
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Members</p>
+<p class="text-xl font-mono font-bold text-primary">234</p>
+</div>
+<div class="bg-white dark:bg-slate-900/40 p-4 rounded-2xl border border-slate-100 dark:border-slate-800">
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Avg Trust</p>
+<p class="text-xl font-mono font-bold text-primary">782</p>
+</div>
+<div class="bg-white dark:bg-slate-900/40 p-4 rounded-2xl border border-slate-100 dark:border-slate-800">
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Default Rate</p>
+<p class="text-xl font-mono font-bold text-green-500">0.8%</p>
+</div>
+</div>
+</section>
+<!-- Your Impact -->
+<section class="space-y-4">
+<div class="flex justify-between items-center px-1">
+<h3 class="text-lg font-bold">Your Impact</h3>
+<span class="text-sm text-primary font-medium">12 neighbors helped</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-white dark:bg-slate-900/30 rounded-xl border border-slate-100 dark:border-slate-800/50">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full" data-alt="Ravi avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7VffkQs_gjDXAZHrwu7aUm48SobNyQ6i9FhJS2ZKDx7S5r5FRepk23KJ_-5zD7dfoC6WttE8yRjIQOz4m_8lfNGSnJ73YPY8e029IdCgpqCh770RDB6pjbxj6v6mwCP3lPn7rYwvE3sg53WGDiwS3lwMLTCyJHJbhsVEB2WK3tKyIxH_XlvsUIX8yYCTTOcCb3yzKX8QC6ZBGTK9L774e_qeaq31UaDKiThbMMcFobsXOgA9qchCmur_rlJDEYjDzOi03hdK-Njs"/>
+<div>
+<p class="font-bold text-sm">Ravi Kumar</p>
+<p class="text-xs text-slate-500">Borrowed ₹2,000</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-green-500 font-bold text-xs">
+                        Repaid <span class="material-symbols-outlined text-sm">check_circle</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 bg-white dark:bg-slate-900/30 rounded-xl border border-slate-100 dark:border-slate-800/50">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full" data-alt="Priya avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmL8d3Z3Yt047JW8VJGRwt1GgB8uWqGy-9UyYHmgrdKyV0nawrrCtZEixn44dLpm2m5PC08LdnR6-DRggJohf55Kou_JJcEHvx6KkXIC0Cxef7Ua3VNa2dQzPji_ACZo6jh5hm2p20fsrYeq2ftPynciit8QZQ3K8Jf-ovQk-0nizAdqT4_uRc4DvSTq9GU3ZYh131DVvTPD8wlX14AuQlQAt1prGmc8kJo2enbBFH11FGSEAs_85dJJmNMHQshCuVRcm3is9Xyqw"/>
+<div>
+<p class="font-bold text-sm">Priya Singh</p>
+<p class="text-xs text-slate-500">Borrowed ₹1,500</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-green-500 font-bold text-xs">
+                        Repaid <span class="material-symbols-outlined text-sm">check_circle</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Button -->
+<div class="fixed bottom-0 left-0 right-0 p-4 glass border-t border-slate-200 dark:border-slate-800 z-50">
+<div class="max-w-md mx-auto">
+<button class="w-full py-4 rounded-2xl text-white font-bold gradient-btn shadow-xl active:scale-95 transition-transform flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">group_add</span>
+                Request Community Loan
+            </button>
+</div>
+</div>
+</body></html>
